@@ -17,7 +17,6 @@ var lcApi = lcFactory(Decimal);
 var api = {};
 
 var asIs = {
-  invertPreset: lcApi.invertPreset,
   equivalentPresets: lcApi.equivalentPresets
 };
 
@@ -28,6 +27,7 @@ var numerical = {
 };
 
 var presetNumerical = {
+  invertPreset: lcApi.invertPreset,
   composePresets: lcApi.composePresets
 };
 
