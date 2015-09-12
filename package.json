@@ -31,8 +31,8 @@
   "dependencies": {
     "floating-adapter": "^1.2.0",
     "for-own": "^0.1.3",
-    "linear-arbitrary-precision": "^3.1.0",
-    "linear-converter": "^5.0.0",
+    "arbitrary-precision": "^1.1.1",
+    "linear-converter": "^6.0.0",
     "linear-presets": "^1.1.11",
     "lodash.flow": "^3.2.1"
   }

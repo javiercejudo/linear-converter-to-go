@@ -5,7 +5,7 @@
 var flow = require('lodash.flow');
 var forOwn = require('for-own');
 var adapter = require('floating-adapter');
-var arbitraryPrecision = require('linear-arbitrary-precision');
+var arbitraryPrecision = require('arbitrary-precision');
 var lcFactory = require('linear-converter');
 var PRESETS = require('linear-presets').PRESETS;
 

@@ -8,13 +8,13 @@ var lc = require('../src/linear-converter-to-go');
 
 describe('linear converter to go', function() {
   it('should convert returning native numbers', function() {
-    lc.convert(5, [[0, 1], [1, 4]]).should.be.exactly(16);
+    lc.convert([[0, 1], [1, 4]], 5).should.be.exactly(16);
   });
 
   it('should have presets bundled', function() {
     var temp = lc.PRESETS.temperature;
 
-    lc.convert(25, temp.celsiusToFahrenheit).should.be.exactly(77);
+    lc.convert(temp.celsiusToFahrenheit, 25).should.be.exactly(77);
 
     lc.PRESETS.should.have.properties([
       'metricPrefixes',
