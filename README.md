@@ -23,6 +23,8 @@ lc.convert(5, [[0, 1], [1, 4]]); // => 16
 
 Unlike *linear-converter*, *linear-converter-to-go* always returns primitive numbers.
 
+See [CodePen example](http://codepen.io/javiercejudo/pen/ojjroJ?editors=101).
+
 For more documentation, see [linear-converter](https://github.com/javiercejudo/linear-converter).
 
 ## Related projects
