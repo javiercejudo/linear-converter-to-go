@@ -1,6 +1,6 @@
 {
   "name": "linear-converter-to-go",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Zero configuration linear converter with floating precision",
   "main": "src/linear-converter-to-go.js",
   "scripts": {
