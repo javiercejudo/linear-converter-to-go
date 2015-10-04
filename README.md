@@ -17,8 +17,8 @@ with floating precision.
 var lc = require('linear-converter-to-go');
 var temp = lc.PRESETS.temperature;
 
-lc.convert(25, temp.celsiusToFahrenheit); // => 77
-lc.convert(5, [[0, 1], [1, 4]]); // => 16
+lc.convert(temp.celsius_fahrenheit, 25); // => 77
+lc.convert([[0, 1], [1, 4]], 5); // => 16
 ```
 
 Unlike *linear-converter*, *linear-converter-to-go* always returns primitive numbers.
