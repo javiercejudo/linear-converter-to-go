@@ -7,7 +7,13 @@ var forOwn = require('for-own');
 var adapter = require('floating-adapter');
 var arbitraryPrecision = require('arbitrary-precision');
 var lcFactory = require('linear-converter');
+var presetFactory = require('linear-preset-factory');
+
 var PRESETS = require('linear-presets').PRESETS;
+
+Object.keys(PRESETS).forEach(function(name) {
+  PRESETS[name] = presetFactory(PRESETS[name]);
+});
 
 var presetToNumbers = require('./util/presetToNumbers');
 

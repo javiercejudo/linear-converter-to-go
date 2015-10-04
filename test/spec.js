@@ -14,7 +14,7 @@ describe('linear converter to go', function() {
   it('should have presets bundled', function() {
     var temp = lc.PRESETS.temperature;
 
-    lc.convert(temp.celsiusToFahrenheit, 25).should.be.exactly(77);
+    lc.convert(temp.celsius_fahrenheit, 25).should.be.exactly(77);
 
     lc.PRESETS.should.have.properties([
       'metricPrefixes',
