@@ -3,7 +3,6 @@
 'use strict';
 
 var flow = require('lodash.flow');
-var forOwn = require('for-own');
 var adapter = require('floating-adapter');
 var arbitraryPrecision = require('arbitrary-precision');
 var lcFactory = require('linear-converter');
@@ -37,16 +36,16 @@ var presetNumerical = {
   composeConversions: lcApi.composeConversions
 };
 
-forOwn(asIs, function(fn, name) {
-  api[name] = fn;
+Object.keys(asIs).forEach(function(fnName) {
+  api[fnName] = asIs[fnName];
 });
 
-forOwn(numerical, function(fn, name) {
-  api[name] = flow(fn, Number);
+Object.keys(numerical).forEach(function(fnName) {
+  api[fnName] = flow(numerical[fnName], Number);
 });
 
-forOwn(presetNumerical, function(fn, name) {
-  api[name] = flow(fn, presetToNumbers);
+Object.keys(presetNumerical).forEach(function(fnName) {
+  api[fnName] = flow(presetNumerical[fnName], presetToNumbers);
 });
 
 api.PRESETS = PRESETS;
