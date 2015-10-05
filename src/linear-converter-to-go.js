@@ -23,7 +23,7 @@ var lcApi = lcFactory(Decimal);
 var api = {};
 
 var asIs = {
-  equivalentPresets: lcApi.equivalentPresets
+  equivalentConversions: lcApi.equivalentConversions
 };
 
 var numerical = {
@@ -33,8 +33,8 @@ var numerical = {
 };
 
 var presetNumerical = {
-  invertPreset: lcApi.invertPreset,
-  composePresets: lcApi.composePresets
+  invertConversion: lcApi.invertConversion,
+  composeConversions: lcApi.composeConversions
 };
 
 forOwn(asIs, function(fn, name) {

@@ -35,11 +35,28 @@ describe('linear converter to go', function() {
   });
 
   it('should invert presets', function() {
-    lc.invertPreset([[0, 1], [0, 3]]).should.eql([[0, 3], [0, 1]]);
+    lc.invertConversion([[0, 1], [0, 3]]).should.eql([[0, 3], [0, 1]]);
   });
 
   it('should compose presets returning scales with primitive numbers', function() {
-    lc.composePresets([[0, 1], [0, 3]], [[0, 1], [1, 2]]).should.eql([[0, 1], [1, 4]]);
+    lc.composeConversions([[0, 1], [0, 3]], [[0, 1], [1, 2]]).should.eql([[0, 1], [1, 4]]);
+  });
+
+  it('should be able to test for equavalence', function() {
+    lc.equivalentConversions(
+      [[0, 10], [10, 20]],
+      [[430245.1, -44.5], [430255.1, -34.5]]
+    ).should.be.exactly(true);
+
+    lc.equivalentConversions(
+      [[0, 1], [0, 2]],
+      [[0, 1], [0, 3]]
+    ).should.be.exactly(false);
+
+    lc.equivalentConversions(
+      [[0, 1], [1, 3]],
+      [[0, 1], [2, 4]]
+    ).should.be.exactly(false);
   });
 
   it('should calculate coefficients as primitive numbers', function() {
