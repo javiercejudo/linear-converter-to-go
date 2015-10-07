@@ -33,7 +33,7 @@
     "floating-adapter": "1.2.0",
     "linear-converter": "7.0.1",
     "linear-preset-factory": "1.0.2",
-    "linear-presets": "2.0.2",
+    "linear-presets": "2.0.3",
     "lodash.flow": "3.2.1",
     "lodash.identity": "3.0.0"
   }
