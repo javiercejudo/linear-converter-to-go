@@ -4,35 +4,27 @@
 
 var flow = require('lodash.flow');
 var identity = require('lodash.identity');
-var adapter = require('floating-adapter');
-var arbitraryPrecision = require('arbitrary-precision');
-var lcFactory = require('linear-converter');
-var presetFactory = require('linear-preset-factory');
+var Decimal = require('arbitrary-precision')(require('floating-adapter'));
+var lcApi = require('linear-converter')(Decimal);
+var anyToAny = require('linear-preset-any-to-any')(Decimal);
+var PRESETS = require('linear-presets').PRESETS;
 var presetToNumbers = require('./util/presetToNumbers');
 
-var PRESETS = require('linear-presets').PRESETS;
-var Decimal = arbitraryPrecision(adapter);
-var lcApi = lcFactory(Decimal);
-
 var apiTransforms = {
-  equivalentConversions: identity,
   convert: Number,
+  invertConversion: presetToNumbers,
+  composeConversions: presetToNumbers,
   getCoefficientA: Number,
   getCoefficientB: Number,
-  invertConversion: presetToNumbers,
-  composeConversions: presetToNumbers
+  equivalentConversions: identity
 };
 
-var api = {
-  PRESETS: {}
-};
+var api = {};
+api.PRESETS = PRESETS;
+api.conversion = anyToAny;
 
 Object.keys(apiTransforms).forEach(function(fnName) {
   api[fnName] = flow(lcApi[fnName], apiTransforms[fnName]);
-});
-
-Object.keys(PRESETS).forEach(function(name) {
-  api.PRESETS[name] = presetFactory(PRESETS[name]);
 });
 
 module.exports = api;
