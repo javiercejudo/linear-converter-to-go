@@ -31,7 +31,7 @@
   "dependencies": {
     "arbitrary-precision": "1.1.1",
     "floating-adapter": "1.2.0",
-    "linear-converter": "7.0.1",
+    "linear-converter": "7.0.2",
     "linear-preset-factory": "1.0.2",
     "linear-presets": "2.0.4",
     "lodash.flow": "3.2.1",
