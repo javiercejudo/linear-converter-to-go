@@ -12,13 +12,16 @@ describe('linear converter to go', function() {
   });
 
   it('should have presets bundled', function() {
-    var temp = lc.PRESETS.temperature;
+    var temp = lc.PRESETS.temperature.conversions;
+    var cToF = lc.conversion(temp, 'celsius', 'fahrenheit');
 
-    lc.convert(temp.celsius_fahrenheit, 25).should.be.exactly(77);
+    lc.convert(cToF, 0).should.be.exactly(32);
+    lc.convert(cToF, 1).should.be.exactly(33.8);
+    lc.convert(cToF, 25).toFixed(3).should.be.exactly('77.000');
 
     lc.PRESETS.should.have.properties([
       'metricPrefixes',
-      'distance',
+      'length',
       'mass',
       'time',
       'electricCurrent',

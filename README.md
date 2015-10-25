@@ -15,9 +15,12 @@ with floating precision.
 
 ```js
 var lc = require('linear-converter-to-go');
-var temp = lc.PRESETS.temperature;
+var temp = lc.PRESETS.temperature.conversions;
+var cToF = lc.conversion(temp, 'celsius', 'fahrenheit');
 
-lc.convert(temp.celsius_fahrenheit, 25); // => 77
+lc.convert(cToF, 25).toFixed(3); // => '77.000'
+
+// f(x) = 3x + 1
 lc.convert([[0, 1], [1, 4]], 5); // => 16
 ```
 
