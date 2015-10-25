@@ -13,6 +13,8 @@ with floating precision.
 
 ## Usage
 
+See [live playground](https://tonicdev.com/javiercejudo/linear-converter-to-go/5.0.0).
+
 ```js
 var lc = require('linear-converter-to-go');
 var temp = lc.PRESETS.temperature.conversions;
