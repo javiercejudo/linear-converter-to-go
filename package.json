@@ -29,7 +29,7 @@
     "should": "^7.1.0"
   },
   "dependencies": {
-    "arbitrary-precision": "^1.1.1",
+    "arbitrary-precision": "^1.1.5",
     "floating-adapter": "^1.2.0",
     "linear-converter": "^7.0.2",
     "linear-preset-any-to-any": "^3.0.2",
