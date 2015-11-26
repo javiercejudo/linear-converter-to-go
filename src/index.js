@@ -2,29 +2,23 @@
 
 'use strict';
 
-var flow = require('lodash.flow');
 var identity = require('lodash.identity');
 var Decimal = require('arbitrary-precision')(require('floating-adapter'));
 var lcApi = require('linear-converter')(Decimal);
 var anyToAny = require('linear-preset-any-to-any')(Decimal);
 var PRESETS = require('linear-presets').PRESETS;
-var presetToNumbers = require('./util/presetToNumbers');
+var presetToNumbers = require('linear-preset-to-number');
 
-var apiTransforms = {
+var api = require('./api-result-transformer')({
   convert: Number,
   invertConversion: presetToNumbers,
   composeConversions: presetToNumbers,
   getCoefficientA: Number,
   getCoefficientB: Number,
   equivalentConversions: identity
-};
+}, lcApi);
 
-var api = {};
 api.PRESETS = PRESETS;
 api.conversion = anyToAny;
-
-Object.keys(apiTransforms).forEach(function(fnName) {
-  api[fnName] = flow(lcApi[fnName], apiTransforms[fnName]);
-});
 
 module.exports = api;

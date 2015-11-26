@@ -4,7 +4,7 @@
 
 require('should');
 
-var lc = require('../src/linear-converter-to-go');
+var lc = require('../src/');
 
 describe('linear converter to go', function() {
   it('should convert returning native numbers', function() {

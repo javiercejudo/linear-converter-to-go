@@ -2,7 +2,7 @@
   "name": "linear-converter-to-go",
   "version": "5.0.0",
   "description": "Zero configuration linear converter with floating precision",
-  "main": "src/linear-converter-to-go.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "gulp test"
   },
@@ -33,6 +33,7 @@
     "floating-adapter": "^1.2.0",
     "linear-converter": "^7.0.2",
     "linear-preset-any-to-any": "^3.0.2",
+    "linear-preset-to-number": "^1.0.0",
     "linear-presets": "^3.0.0",
     "lodash.flow": "^3.2.1",
     "lodash.identity": "^3.0.0"
