@@ -29,6 +29,7 @@
     "should": "^7.1.0"
   },
   "dependencies": {
+    "api-result-transformer": "^1.1.0",
     "arbitrary-precision": "^1.1.1",
     "floating-adapter": "^1.2.0",
     "linear-converter": "^7.0.2",

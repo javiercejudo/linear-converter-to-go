@@ -9,7 +9,7 @@ var anyToAny = require('linear-preset-any-to-any')(Decimal);
 var PRESETS = require('linear-presets').PRESETS;
 var presetToNumbers = require('linear-preset-to-number');
 
-var api = require('./api-result-transformer')({
+var api = require('api-result-transformer')({
   convert: Number,
   invertConversion: presetToNumbers,
   composeConversions: presetToNumbers,
